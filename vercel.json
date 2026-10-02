@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/s/:slug", "destination": "/api/host?action=serve&slug=:slug" },
+    { "source": "/s/:slug/", "destination": "/api/host?action=serve&slug=:slug" },
+    { "source": "/s/:slug/:path*", "destination": "/api/host?action=serve&slug=:slug&file=:path" }
+  ],
+  "functions": {
+    "api/host.js": { "memory": 1024, "maxDuration": 15 }
+  }
+}
